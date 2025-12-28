@@ -16,7 +16,9 @@
         h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .tag { background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; margin-top: 10px; }
+        .btn:hover { background: var(--primary); }
+        .tag { background: #e0e0e0; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; }
         #contact { background: var(--primary); color: white; text-align: center; padding: 40px 0; }
         #contact a { color: var(--accent); text-decoration: none; }
     </style>
@@ -29,31 +31,31 @@
             <a href="#formation">Formation</a>
             <a href="#experiences">Expériences</a>
             <a href="#projets">Projets</a>
-            <a href="#competences">Compétences</a>
+            <a href="#cv">Mon CV</a>
         </nav>
     </header>
 
     <div class="container">
         <section id="accueil">
-            <h1>Yahya Mazouari</h1>
-            <h3>Élève Ingénieur en Informatique et Télécommunications</h3>
-            <p>Actuellement en formation à l'<strong>ENSEEIHT</strong>, je me spécialise dans les réseaux et les sciences du numérique après un parcours d'excellence en classes préparatoires au Maroc.</p>
+            <h1>Yahya Mazouari </h1>
+            <h3>Élève Ingénieur en Informatique et Télécommunications </h3>
+            <p>Actuellement à l'<strong>ENSEEIHT</strong> (Toulouse), je me spécialise en Informatique, Télécommunications et Réseaux[cite: 1, 2]. Mon parcours est marqué par une solide formation en classes préparatoires (MPSI/MP) au Maroc[cite: 2, 6].</p>
         </section>
 
         <section id="formation">
             <h2>Formation</h2>
             <div class="grid">
                 <div class="card">
-                    <strong>ENSEEIHT, Toulouse</strong> (2024-2027)
-                    <p>Diplôme d'Ingénieur en Informatique et Télécommunications [cite: 2]</p>
+                    <strong>ENSEEIHT, Toulouse</strong> (2024-2027) [cite: 2]
+                    <p>Diplôme d'Ingénieur en Informatique et Télécommunications[cite: 1].</p>
                 </div>
                 <div class="card">
-                    <strong>Lycée Ibn Timiya, Maroc</strong> (2022-2024)
-                    <p>CPGE - Filière MPSI/MP (Maths, Physique, Sciences de l'Ingénieur) [cite: 2, 6]</p>
+                    <strong>Lycée Ibn Timiya, Maroc</strong> (2022-2024) [cite: 2]
+                    <p>CPGE - Filière MPSI/MP[cite: 6].</p>
                 </div>
                 <div class="card">
-                    <strong>Lycée Mohammed VI d'Excellence</strong> (2022)
-                    <p>Baccalauréat Scientifique - Mention Très Bien [cite: 7, 8]</p>
+                    <strong>Lycée Mohammed VI d'Excellence</strong> (2022) [cite: 7]
+                    <p>Baccalauréat Scientifique - Mention Très Bien[cite: 8, 41].</p>
                 </div>
             </div>
         </section>
@@ -61,24 +63,13 @@
         <section id="experiences">
             <h2>Expériences Professionnelles</h2>
             <div class="card">
-                <strong>Stagiaire Administratif | Auto-école Cozy Conduite, Paris</strong> (Juin-Juil. 2025)
-                <ul>
-                    <li>Gestion des inscriptions et digitalisation des dossiers[cite: 15, 16].</li>
-                </ul>
+                <strong>Stagiaire Administratif | Auto-école Cozy Conduite, Paris</strong> (Juin-Juil. 2025) [cite: 10, 11, 42, 43]
+                <p>Accueil, gestion des plannings et digitalisation des dossiers[cite: 15, 16].</p>
             </div>
             <br>
             <div class="card">
-                <strong>Préparateur de Commande | Retree Discount</strong> (Été 2025)
-                <ul>
-                    <li>Picking, expédition et gestion des stocks en équipe[cite: 19, 20].</li>
-                </ul>
-            </div>
-            <br>
-            <div class="card">
-                <strong>Enseignant Particulier | Espace Co, Toulouse</strong> (2025)
-                <ul>
-                    <li>Soutien scolaire en mathématiques et physique[cite: 23].</li>
-                </ul>
+                <strong>Préparateur de Commande | Retree Discount</strong> (Été 2025) [cite: 17, 18, 45]
+                <p>Gestion des stocks et logistique en équipe[cite: 19, 20].</p>
             </div>
         </section>
 
@@ -86,29 +77,20 @@
             <h2>Projets Techniques</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>To-Do List App <span class="tag">Java / Git</span></h3>
-                    <p>Développement d'une application de gestion de tâches avec interface graphique (Agile)[cite: 26, 28].</p>
+                    <h3>To-Do List <span class="tag">Java</span> <span class="tag">Git</span></h3> [cite: 48]
+                    <p>Application de gestion de tâches avec interface graphique[cite: 26, 28].</p>
                 </div>
                 <div class="card">
-                    <h3>Simulation FAI <span class="tag">Réseaux / Linux</span></h3>
-                    <p>Mise en place d'une architecture réseau (Routage, DNS, DHCP)[cite: 30, 31].</p>
+                    <h3>FAI Simplifié <span class="tag">Réseaux</span> <span class="tag">Linux</span></h3> [cite: 49]
+                    <p>Simulation d'un fournisseur d'accès (Routage, DNS, DHCP)[cite: 30, 31].</p>
                 </div>
             </div>
         </section>
 
-        <section id="competences">
-            <h2>Compétences & Langues</h2>
-            <div class="grid">
-                <div class="card">
-                    <strong>Techniques :</strong> Java, Python, C, Ada, MATLAB, Git, Linux[cite: 34].
-                </div>
-                <div class="card">
-                    <strong>Soft Skills :</strong> Travail d'équipe, Autonomie, Rédaction technique[cite: 37].
-                </div>
-                <div class="card">
-                    <strong>Langues :</strong> Français (Bilingue), Anglais (Avancé), Arabe (Maternel)[cite: 50, 51].
-                </div>
-            </div>
+        <section id="cv" style="text-align: center;">
+            <h2>Mon Curriculum Vitae</h2>
+            <p>Cliquez ci-dessous pour consulter ou télécharger mon CV complet au format PDF.</p>
+            <a href="cv.pdf" class="btn" target="_blank">Consulter mon CV (PDF)</a>
         </section>
     </div>
 
