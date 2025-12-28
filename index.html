@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portfolio | Yahya Mazouari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- Styles Généraux --- */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --light-bg: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        /* --- Section Intro --- */
+        .intro-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .intro-text {
+            flex: 2;
+        }
+
+        .intro-img {
+            flex: 1;
+            text-align: center;
+        }
+
+        .intro-img img {
+            width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Section Parcours Académique --- */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .course-card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+
+        /* --- Boutons CV --- */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px 5px 0 0;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+        }
+
+        /* --- Section Activités --- */
+        .activity-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .activity-item img {
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        /* --- Contact --- */
+        #contact {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        #contact h2 { color: white; }
+        #contact p { margin: 5px 0; }
+        #contact a { color: var(--accent-color); text-decoration: none; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 10px; }
+            .intro-grid { flex-direction: column-reverse; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#formation">Formation</a>
+            <a href="#carriere">Carrière</a>
+            <a href="#engagement">Engagement</a>
+            <a href="#loisirs">Loisirs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section id="accueil" class="intro-grid">
+            <div class="intro-text">
+                <h1>Bienvenue sur mon E-Portfolio</h1>
+                <h2>Yahya Mazouari</h2>
+                <p>
+                    Bonjour ! Je suis actuellement étudiant ingénieur à l'<strong>ENSEEIHT</strong> à Toulouse, spécialisé en sciences du numérique. 
+                    Après deux années intensives en classes préparatoires au Maroc, j'ai rejoint l'ENSEEIHT en tant qu'étudiant international 
+                    pour approfondir mes compétences en informatique et science des données.
+                </p>
+            </div>
+            <div class="intro-img">
+                <img src="https://static.wixstatic.com/media/a1f3da_dc18a03cace54c41875a1a124d240305~mv2.jpg" alt="Photo de Yahya Mazouari">
+            </div>
+        </section>
+
+        <section id="formation">
+            <h2>Parcours Académique - ENSEEIHT</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h3>Semestre 5 (1ère Année SN)</h3>
+                    <ul>
+                        <li>Probabilités & Statistiques</li>
+                        <li>Programmation Impérative</li>
+                        <li>Analyse Numérique</li>
+                        <li>Traitement du Signal & Automatique</li>
+                        <li>Modélisation et Architecture</li>
+                        <li>Soft Skills</li>
+                    </ul>
+                </div>
+                <div class="course-card">
+                    <h3>Semestre 6 (1ère Année SN)</h3>
+                    <ul>
+                        <li>Télécommunications</li>
+                        <li>Réseaux</li>
+                        <li>Calcul Scientifique</li>
+                        <li>Technologie Objet</li>
+                        <li>Architecture et Systèmes</li>
+                        <li>Compétences Humaines</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="carriere">
+            <h2>Développement de Carrière</h2>
+            <p>Retrouvez mes curriculum vitae mis à jour dans les deux langues :</p>
+            <a href="https://5da5c20d-8b49-4720-93df-71cca50a20b2.filesusr.com/ugd/a1f3da_8ea3c30025d549f3b33355507b6af5cd.pdf" class="btn" target="_blank">CV en Français</a>
+            <a href="https://5da5c20d-8b49-4720-93df-71cca50a20b2.filesusr.com/ugd/a1f3da_96be98ee85d7451bb8a11f9f299c5897.pdf" class="btn" target="_blank">CV en Anglais</a>
+        </section>
+
+        <section id="engagement">
+            <h2>Mobilité Internationale & Engagement</h2>
+            <p><strong>Mobilité :</strong> Étudiant originaire du Maroc, je poursuis actuellement mon cursus en France dans le cadre d'un programme de mobilité internationale.</p>
+            
+            <h3>Engagement Civique : La Fresque du Climat</h3>
+            <div class="activity-item">
+                <p>
+                    La Fresque du Climat est un atelier interactif visant à sensibiliser au changement climatique. 
+                    Basé sur les données du GIEC, il permet de comprendre les causes et effets du réchauffement climatique 
+                    de manière collaborative.
+                </p>
+                <img src="https://static.wixstatic.com/media/a1f3da_d1f470a8de6e48aebf5fd1dc974a0410~mv2.jpg" alt="Fresque du Climat">
+            </div>
+        </section>
+
+        <section id="loisirs">
+            <h2>Sports & Activités</h2>
+            <div class="activity-item">
+                <img src="https://static.wixstatic.com/media/a1f3da_e45fcd0e62494fb6832f9fa7f3f568be~mv2.jpg" alt="Football">
+                <div>
+                    <h3>Football</h3>
+                    <p>Passionné par le sport collectif, pratiquant régulièrement le football pour l'esprit d'équipe et la discipline.</p>
+                </div>
+            </div>
+            <div class="activity-item">
+                <img src="https://static.wixstatic.com/media/a1f3da_3a66624ce07c48bd83dd2fabef97bd16~mv2.jpg" alt="Lecture">
+                <div>
+                    <h3>Lecture</h3>
+                    <p>Amateur de lecture pour l'ouverture d'esprit et l'apprentissage continu.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p><strong>Téléphone :</strong> 07 58 49 77 27</p>
+            <p><strong>Email :</strong> <a href="mailto:yahya.mazouari@etu.inp-n7.fr">yahya.mazouari@etu.inp-n7.fr</a></p>
+            <p><strong>Adresse :</strong> 21 RUE DE CHER, 31100 TOULOUSE</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Yahya Mazouari - Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
