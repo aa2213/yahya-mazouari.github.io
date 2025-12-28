@@ -6,21 +6,107 @@
     <title>E-Portfolio | Yahya Mazouari</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2c3e50; --accent: #3498db; --bg: #f4f7f6; --text: #333; }
-        body { font-family: 'Poppins', sans-serif; line-height: 1.6; margin: 0; color: var(--text); background: var(--bg); }
-        header { background: #fff; padding: 20px 0; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
-        nav { display: flex; justify-content: space-around; max-width: 1100px; margin: auto; }
-        nav a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-        section { padding: 50px 0; border-bottom: 1px solid #ddd; }
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: 0.3s; margin-top: 10px; }
-        .btn:hover { background: var(--primary); }
-        .tag { background: #e0e0e0; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; }
-        #contact { background: var(--primary); color: white; text-align: center; padding: 40px 0; }
-        #contact a { color: var(--accent); text-decoration: none; }
+        :root {
+            --primary-color: #1a2a6c;
+            --accent-color: #00a8ff;
+            --bg-light: #f8f9fa;
+            --text-dark: #2d3436;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        /* Barre de navigation */
+        header {
+            background: #ffffff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent-color); }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        section { padding: 4rem 0; border-bottom: 1px solid #eee; }
+
+        h1, h2 { color: var(--primary-color); }
+        h2 { border-left: 5px solid var(--accent-color); padding-left: 1rem; margin-bottom: 2rem; }
+
+        /* Section Accueil */
+        .hero { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+        .hero-text { flex: 2; }
+        .hero-img img {
+            width: 250px;
+            border-radius: 50% 20% / 50% 20%;
+            box-shadow: 10px 10px 0 var(--accent-color);
+        }
+
+        /* Grilles pour les expériences et projets */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .date { color: var(--accent-color); font-weight: 600; font-size: 0.85rem; }
+
+        /* Bouton CV */
+        .btn-cv {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        .btn-cv:hover { background: var(--accent-color); }
+
+        /* Compétences */
+        .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; }
+        .skill-tag { background: #e0e7ff; color: #1e40af; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 2rem 0; margin-top: 4rem; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; align-items: center; gap: 0.5rem; }
+            .hero { text-align: center; flex-direction: column-reverse; }
+        }
     </style>
 </head>
 <body>
@@ -29,79 +115,158 @@
         <nav>
             <a href="#accueil">Accueil</a>
             <a href="#formation">Formation</a>
+            <a href="#parcours">Parcours</a>
             <a href="#experiences">Expériences</a>
             <a href="#projets">Projets</a>
-            <a href="#cv">Mon CV</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <div class="container">
-        <section id="accueil">
-            <h1>Yahya Mazouari </h1>
-            <h3>Élève Ingénieur en Informatique et Télécommunications </h3>
-            <p>Actuellement à l'<strong>ENSEEIHT</strong> (Toulouse), je me spécialise en Informatique, Télécommunications et Réseaux[cite: 1, 2]. Mon parcours est marqué par une solide formation en classes préparatoires (MPSI/MP) au Maroc[cite: 2, 6].</p>
+        <section id="accueil" class="hero">
+            <div class="hero-text">
+                <h1>Yahya Mazouari [cite: 3]</h1>
+                <p><strong>Élève Ingénieur en Informatique et Télécommunications [cite: 3]</strong></p>
+                <p>
+                    Actuellement étudiant à l'<strong>ENSEEIHT</strong> (Toulouse)[cite: 1]. 
+                    Après deux années de classes préparatoires MPSI/MP au Maroc[cite: 2, 6], 
+                    je me spécialise aujourd'hui dans les réseaux et les sciences du numérique[cite: 2].
+                </p>
+                <a href="cv.pdf" class="btn-cv" target="_blank">Télécharger mon CV complet (PDF)</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://static.wixstatic.com/media/a1f3da_dc18a03cace54c41875a1a124d240305~mv2.jpg" alt="Yahya Mazouari">
+            </div>
         </section>
 
         <section id="formation">
             <h2>Formation</h2>
             <div class="grid">
                 <div class="card">
-                    <strong>ENSEEIHT, Toulouse</strong> (2024-2027) [cite: 2]
-                    <p>Diplôme d'Ingénieur en Informatique et Télécommunications[cite: 1].</p>
+                    <span class="date">2024 - 2027 [cite: 2]</span>
+                    <h3>Diplôme d'Ingénieur (En cours) [cite: 2]</h3>
+                    <p><strong>ENSEEIHT, Toulouse [cite: 1]</strong></p>
+                    <p>Spécialisation : Informatique, Télécommunications et Réseaux[cite: 2].</p>
                 </div>
                 <div class="card">
-                    <strong>Lycée Ibn Timiya, Maroc</strong> (2022-2024) [cite: 2]
-                    <p>CPGE - Filière MPSI/MP[cite: 6].</p>
+                    <span class="date">2022 - 2024 [cite: 2]</span>
+                    <h3>CPGE (MPSI/MP) [cite: 2, 6]</h3>
+                    <p><strong>Lycée Ibn Timiya, Maroc [cite: 2]</strong></p>
+                    <p>Mathématiques, Physique et Sciences de l'Ingénieur[cite: 6].</p>
                 </div>
                 <div class="card">
-                    <strong>Lycée Mohammed VI d'Excellence</strong> (2022) [cite: 7]
-                    <p>Baccalauréat Scientifique - Mention Très Bien[cite: 8, 41].</p>
+                    <span class="date">2022 [cite: 41]</span>
+                    <h3>Baccalauréat Scientifique [cite: 8]</h3>
+                    <p><strong>Lycée Mohammed VI d'Excellence [cite: 7]</strong></p>
+                    <p>Mention Très Bien[cite: 8].</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="parcours">
+            <h2>Engineering Course (Détails)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Semestre 5</h3>
+                    <ul>
+                        <li>Programmation Impérative</li>
+                        <li>Analyse Numérique et Statistiques</li>
+                        <li>Signal Processing and Control Systems</li>
+                        <li>Probabilités</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Semestre 6</h3>
+                    <ul>
+                        <li>Télécommunications & Réseaux</li>
+                        <li>Scientific Computing & Data Analysis</li>
+                        <li>Object-Oriented Technology</li>
+                        <li>Architecture and Systems</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section id="experiences">
-            <h2>Expériences Professionnelles</h2>
+            <h2>Expériences Professionnelles [cite: 9]</h2>
             <div class="card">
-                <strong>Stagiaire Administratif | Auto-école Cozy Conduite, Paris</strong> (Juin-Juil. 2025) [cite: 10, 11, 42, 43]
-                <p>Accueil, gestion des plannings et digitalisation des dossiers[cite: 15, 16].</p>
+                <span class="date">Juin - Juillet 2025 [cite: 43]</span>
+                <h3>Stagiaire Administratif [cite: 11]</h3>
+                <p><strong>Auto-école Cozy Conduite, Paris [cite: 10, 42]</strong></p>
+                <ul>
+                    <li>Gestion des inscriptions et plannings moniteurs[cite: 15].</li>
+                    <li>Digitalisation et classement des dossiers administratifs[cite: 16].</li>
+                </ul>
             </div>
             <br>
             <div class="card">
-                <strong>Préparateur de Commande | Retree Discount</strong> (Été 2025) [cite: 17, 18, 45]
-                <p>Gestion des stocks et logistique en équipe[cite: 19, 20].</p>
+                <span class="date">Été 2025 [cite: 45]</span>
+                <h3>Préparateur de Commande [cite: 18]</h3>
+                <p><strong>Retree Discount, France [cite: 17, 44]</strong></p>
+                <ul>
+                    <li>Picking et expédition des commandes[cite: 19].</li>
+                    <li>Gestion des stocks et travail en équipe[cite: 19, 20].</li>
+                </ul>
+            </div>
+            <br>
+            <div class="card">
+                <span class="date">2025 [cite: 47]</span>
+                <h3>Enseignant Particulier [cite: 22]</h3>
+                <p><strong>Espace Co, Toulouse [cite: 21, 46]</strong></p>
+                <p>Soutien scolaire en mathématiques et physique pour élèves[cite: 23].</p>
             </div>
         </section>
 
         <section id="projets">
-            <h2>Projets Techniques</h2>
+            <h2>Projets Techniques [cite: 24]</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>To-Do List <span class="tag">Java</span> <span class="tag">Git</span></h3> [cite: 48]
-                    <p>Application de gestion de tâches avec interface graphique[cite: 26, 28].</p>
+                    <h3>Gestion de Tâches (To-Do List) [cite: 26]</h3>
+                    <p>Application développée en Java (Git) avec interface graphique et gestion de projet Agile[cite: 27, 28, 48].</p>
                 </div>
                 <div class="card">
-                    <h3>FAI Simplifié <span class="tag">Réseaux</span> <span class="tag">Linux</span></h3> [cite: 49]
-                    <p>Simulation d'un fournisseur d'accès (Routage, DNS, DHCP)[cite: 30, 31].</p>
+                    <h3>Mise en place d'un FAI Simplifié [cite: 30]</h3>
+                    <p>Simulation d'architecture réseau comprenant Routage, DNS, DHCP sous Linux[cite: 31, 49].</p>
                 </div>
             </div>
         </section>
 
-        <section id="cv" style="text-align: center;">
-            <h2>Mon Curriculum Vitae</h2>
-            <p>Cliquez ci-dessous pour consulter ou télécharger mon CV complet au format PDF.</p>
-            <a href="cv.pdf" class="btn" target="_blank">Consulter mon CV (PDF)</a>
+        <section id="competences">
+            <h2>Compétences & Langues [cite: 32]</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Techniques [cite: 33]</h3>
+                    <ul class="skills-list">
+                        <li class="skill-tag">Java </li>
+                        <li class="skill-tag">Python </li>
+                        <li class="skill-tag">C </li>
+                        <li class="skill-tag">Ada </li>
+                        <li class="skill-tag">MATLAB </li>
+                        <li class="skill-tag">Git </li>
+                        <li class="skill-tag">Linux/Unix </li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Langues [cite: 38]</h3>
+                    <ul>
+                        <li><strong>Français :</strong> Bilingue [cite: 50]</li>
+                        <li><strong>Anglais :</strong> Avancé / Technique [cite: 50]</li>
+                        <li><strong>Arabe :</strong> Maternel [cite: 51]</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
 
-    <section id="contact">
+    <footer id="contact">
         <div class="container">
-            <h2>Contact</h2>
-            <p>📍 21 Rue de Cher, 31100 Toulouse [cite: 4, 13]</p>
-            <p>📞 +33 7 58 49 77 27 [cite: 5]</p>
-            <p>📧 <a href="mailto:mazouariyahya@gmail.com">mazouariyahya@gmail.com</a> [cite: 14]</p>
+            <h2>Me Contacter</h2>
+            <p>📍 21 Rue de Cher, 31100 Toulouse, France [cite: 4, 13]</p>
+            <p>📞 +33 7 58 49 77 27 </p>
+            <p>📧 <a href="mailto:mazouariyahya@gmail.com" style="color: white;">mazouariyahya@gmail.com </a></p>
+            <p style="font-size: 0.8rem; margin-top: 2rem;">© 2024 Yahya Mazouari. Tous droits réservés.</p>
         </div>
-    </section>
+    </footer>
 
 </body>
 </html>
