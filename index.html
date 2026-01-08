@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahya Mazouari | Portfolio Ingénieur</title>
+    <title>Yahya Mazouari | Portfolio & PPP</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,7 +12,6 @@
             --accent: #3b82f6;
             --bg-light: #f8fafc;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.7);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,21 +23,21 @@
             scroll-behavior: smooth;
         }
 
-        /* --- Animations --- */
+        /* Animations */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- Navigation --- */
+        /* Navigation */
         nav {
             position: fixed; width: 100%; padding: 1.2rem 5%;
-            background: var(--glass); backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px);
             display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
         .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; margin-left: 2rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent); }
 
-        /* --- Hero Section --- */
+        /* Hero Section */
         .hero {
             height: 100vh; display: flex; align-items: center; justify-content: center;
             padding: 0 10%; gap: 60px;
@@ -47,60 +46,47 @@
         .hero-content { flex: 1; }
         .hero-content h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 1rem; }
         .hero-content span { color: var(--accent); }
-        .hero-image { flex: 1; text-align: center; }
         .hero-image img {
             width: 320px; height: 320px; object-fit: cover;
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
             border: 10px solid var(--white);
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
-            animation: morph 8s ease-in-out infinite;
         }
 
-        @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        }
-
-        /* --- Sections --- */
-        .container { max-width: 1100px; margin: auto; padding: 100px 2rem; }
+        /* Sections */
+        .container { max-width: 1100px; margin: auto; padding: 80px 2rem; }
         h2 { font-size: 2.5rem; margin-bottom: 3rem; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
-        /* --- Cartes Glassmorphism --- */
+        /* Cartes */
         .card {
             background: var(--white); padding: 2.5rem; border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            transition: 0.4s;
+            transition: 0.4s; height: 100%;
         }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; display: block; }
 
-        /* --- Section Loisirs --- */
-        .hobby-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-        .hobby-item {
-            text-align: center; padding: 2rem; background: var(--white);
-            border-radius: 20px; transition: 0.3s;
-        }
-        .hobby-item i { font-size: 2rem; display: block; margin-bottom: 1rem; }
+        /* PPP Styling */
+        .ppp-box { background: #eff6ff; border-left: 5px solid var(--accent); padding: 1.5rem; margin-bottom: 1rem; border-radius: 0 10px 10px 0; }
 
-        /* --- Footer --- */
-        footer { background: var(--primary); color: white; padding: 6rem 0; text-align: center; }
-        .contact-info { margin-top: 2rem; font-weight: 300; opacity: 0.9; }
-        .socials { font-size: 1.8rem; margin-bottom: 2rem; }
-        .socials a { color: white; margin: 0 15px; transition: 0.3s; }
-        .socials a:hover { color: var(--accent); }
+        /* Loisirs */
+        .hobby-item { text-align: center; padding: 2rem; background: var(--white); border-radius: 20px; }
+        .hobby-item i { font-size: 2.5rem; margin-bottom: 1rem; }
 
+        /* Boutons */
         .btn {
             display: inline-block; padding: 1rem 2rem; border-radius: 12px;
             text-decoration: none; font-weight: 600; transition: 0.3s;
-            background: var(--primary); color: white;
+            background: var(--primary); color: white; border: none; cursor: pointer;
         }
-        .btn:hover { background: var(--accent); transform: scale(1.05); }
+        .btn-ppp { background: var(--accent); }
+        .btn:hover { transform: scale(1.05); opacity: 0.9; }
 
+        footer { background: var(--primary); color: white; padding: 4rem 0; text-align: center; }
+        
         @media (max-width: 900px) {
             .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; height: auto; }
-            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -111,6 +97,7 @@
         <div class="nav-links">
             <a href="#about">Profil</a>
             <a href="#exp">Parcours</a>
+            <a href="#ppp">Projet PPP</a>
             <a href="#activites">Loisirs</a>
             <a href="#contact">Contact</a>
         </div>
@@ -121,11 +108,11 @@
             <h1 class="reveal">Yahya <br><span>Mazouari</span></h1>
             <p class="reveal" style="font-size: 1.2rem; margin-bottom: 2rem; color: #64748b;">
                 Élève-Ingénieur en <strong>2ème Année</strong> à l'<strong>ENSEEIHT</strong> (Toulouse).<br>
-                Spécialisé en Informatique, Réseaux et Télécommunications.
+                Spécialisation : Informatique, Réseaux et Télécommunications.
             </p>
-            <div class="reveal" style="display: flex; gap: 15px; justify-content: flex-start;">
-                <a href="cv.pdf" class="btn">Télécharger mon CV</a>
-                <a href="#contact" style="padding: 1rem; font-weight: 600; text-decoration: none; color: var(--primary);">Me contacter →</a>
+            <div class="reveal" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="cv.pdf" class="btn">Télécharger CV</a>
+                <a href="ppp.pdf" class="btn btn-ppp">Présentation PPP (PDF)</a>
             </div>
         </div>
         <div class="hero-image reveal">
@@ -134,76 +121,85 @@
     </section>
 
     <div class="container" id="exp">
-        <h2 class="reveal">Expériences & Projets</h2>
+        <h2 class="reveal">Parcours & Expériences</h2>
         <div class="grid">
             <div class="card reveal">
                 <i class="fas fa-university"></i>
                 <h3>Formation N7</h3>
-                <p>Cycle ingénieur spécialisé. Solides compétences en Java, Python, C, Réseaux et Traitement du Signal.</p>
+                <p>Cycle ingénieur spécialisé. Compétences en Systèmes de Télécommunications, Réseaux et Informatique.</p>
             </div>
             <div class="card reveal">
                 <i class="fas fa-briefcase"></i>
-                <h3>Expérience à Paris</h3>
-                <p>Stage administratif chez <strong>Cozy Conduite</strong> (6 semaines). Gestion des plannings et digitalisation.</p>
+                <h3>Expériences Pro</h3>
+                <p>Stage chez Cozy Conduite (Paris), job logistique chez Retree Discount et soutien scolaire (Espace Co).</p>
             </div>
             <div class="card reveal">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Simulation Réseau</h3>
-                <p>Mise en place d'un FAI simplifié (Routage, DNS, DHCP) sous Linux. Architecture de systèmes complexes.</p>
+                <i class="fas fa-laptop-code"></i>
+                <h3>Projets Techniques</h3>
+                <p>Simulation de FAI (Routage/DNS) et Application To-Do List en Java (Méthode Agile).</p>
             </div>
         </div>
     </div>
 
-    <section id="activites" style="background: #ffffff;">
+    <section id="ppp" style="background: #ffffff;">
         <div class="container">
-            <h2 class="reveal">Activités & Passions</h2>
-            <div class="hobby-grid">
-                <div class="hobby-item reveal">
-                    <i class="fas fa-futbol" style="color: #10b981;"></i>
-                    <h4>Football</h4>
-                    <p>Esprit d'équipe et endurance.</p>
+            <h2 class="reveal">Mon Projet Professionnel (PPP)</h2>
+            <p class="reveal" style="text-align: center; margin-bottom: 3rem; color: #64748b;">Ma vision stratégique pour devenir chercheur en R&D.</p>
+            
+            <div class="grid">
+                <div class="card reveal">
+                    <h3><i class="fas fa-map-signs"></i> Mon Cursus Cible</h3>
+                    <div class="ppp-box"><strong>M1 :</strong> Recherche active d'un stage technique.</div>
+                    <div class="ppp-box"><strong>M2 :</strong> Master SATCOM ou Télécoms sans fil & Objets connectés.</div>
+                    <div class="ppp-box"><strong>Post-Diplôme :</strong> Devenir PhD Student (Doctorat).</div>
                 </div>
-                <div class="hobby-item reveal">
-                    <i class="fas fa-book" style="color: #f59e0b;"></i>
-                    <h4>Lecture</h4>
-                    <p>Curiosité et apprentissage.</p>
-                </div>
-                <div class="hobby-item reveal">
-                    <i class="fas fa-leaf" style="color: #3b82f6;"></i>
-                    <h4>Climat</h4>
-                    <p>Engagé pour l'environnement.</p>
+                
+                <div class="card reveal">
+                    <h3><i class="fas fa-chess"></i> Mes Stratégies</h3>
+                    <p><strong>Transition Chercheur :</strong> Choisir des projets de recherche (JRP) orientés vers l'innovation avancée en laboratoire.</p><br>
+                    <p><strong>Réseautage :</strong> Solliciter les enseignants-chercheurs de l'N7 et viser des partenaires comme le <strong>CNES</strong>, <strong>Airbus</strong> ou <strong>Thales</strong>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <h2 class="reveal">Vision & Ambition (PPP)</h2>
-        <div class="card reveal" style="max-width: 900px; margin: auto; text-align: center;">
-            <i class="fas fa-rocket"></i>
-            <h3>Vers la Recherche & Innovation</h3>
-            <p>Mon objectif est de devenir <strong>PhD Student</strong>. Je vise une spécialisation en <strong>SATCOM</strong> ou Télécoms sans fil pour intégrer des laboratoires de pointe ou des pôles R&D (CNES, Airbus, Thales).</p>
+    <section id="activites">
+        <div class="container">
+            <h2 class="reveal">Activités & Loisirs</h2>
+            <div class="grid">
+                <div class="hobby-item reveal">
+                    <i class="fas fa-futbol" style="color: #10b981;"></i>
+                    <h4>Football</h4>
+                    <p>Sport collectif, esprit d'équipe et discipline.</p>
+                </div>
+                <div class="hobby-item reveal">
+                    <i class="fas fa-book-open" style="color: #f59e0b;"></i>
+                    <h4>Lecture</h4>
+                    <p>Ouverture d'esprit et enrichissement personnel.</p>
+                </div>
+                <div class="hobby-item reveal">
+                    <i class="fas fa-globe-europe" style="color: #3b82f6;"></i>
+                    <h4>Environnement</h4>
+                    <p>Sensibilisation aux enjeux climatiques.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <footer id="contact">
-        <div class="container" style="padding: 0 2rem;">
-            <h2>Contactez-moi</h2>
-            <div class="socials">
-                <a href="mailto:mazouariyahya@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+33758497727"><i class="fas fa-phone"></i></a>
-                <a href="https://aa2213.github.io/yahya-mazouari.github.io/"><i class="fab fa-github"></i></a>
+        <div class="container" style="padding: 40px 0;">
+            <h2>Contact</h2>
+            <div style="font-size: 1.5rem; margin-bottom: 2rem;">
+                <a href="mailto:mazouariyahya@gmail.com" style="color: white; margin: 0 15px;"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+33758497727" style="color: white; margin: 0 15px;"><i class="fas fa-phone"></i></a>
             </div>
-            <div class="contact-info">
-                <p>📍 34 avenue de l'Hers, 31100 Toulouse</p>
-                <p>📧 mazouariyahya@gmail.com</p>
-            </div>
-            <p style="margin-top: 4rem; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Yahya Mazouari. Site propulsé par GitHub Pages.</p>
+            <p>📍 34 avenue de l'Hers, 31100 Toulouse</p>
+            <p>📧 mazouariyahya@gmail.com</p>
+            <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Yahya Mazouari. Présentation Projet Personnel Professionnel.</p>
         </div>
     </footer>
 
     <script>
-        // Animation au défilement
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -216,7 +212,6 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        // Lancer une fois au chargement
         reveal();
     </script>
 </body>
