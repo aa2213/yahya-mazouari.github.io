@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yahya Mazouari | Portfolio</title>
+    <title>Yahya Mazouari | Portfolio & Projet Professionnel</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0f172a; --accent: #3b82f6; --text: #1e293b; --bg: #f8fafc; }
+        :root { --primary: #0f172a; --accent: #3b82f6; --text: #1e293b; --bg: #f8fafc; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
         .container { max-width: 1100px; margin: auto; padding: 0 2rem; }
         
         /* Navigation */
         nav { background: white; padding: 1rem 5%; display: flex; justify-content: space-between; position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-weight: 600; }
+        .nav-links a { text-decoration: none; color: var(--text); margin-left: 1.5rem; font-weight: 600; font-size: 0.9rem; }
 
         /* Hero */
         .hero { display: flex; align-items: center; padding: 80px 0; gap: 4rem; }
         .hero-img img { width: 280px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .btn { background: var(--primary); color: white; padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 1rem; }
+        .btn { background: var(--primary); color: white; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 1rem; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
 
         /* Sections */
-        section { padding: 80px 0; }
-        h2 { font-size: 2rem; margin-bottom: 2.5rem; border-left: 5px solid var(--accent); padding-left: 1rem; }
+        section { padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
+        h2 { font-size: 1.8rem; margin-bottom: 2.5rem; border-left: 5px solid var(--accent); padding-left: 1rem; color: var(--primary); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; }
-        .date { color: var(--accent); font-weight: 700; font-size: 0.9rem; }
+        .card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0; height: 100%; }
+        .date { color: var(--accent); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; }
 
-        /* Compétences */
-        .skills-list { display: flex; flex-wrap: wrap; gap: 0.8rem; list-style: none; }
-        .skill-item { background: #eff6ff; color: var(--accent); padding: 0.4rem 1rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; }
+        /* Projet PPP Styling */
+        .project-step { border-top: 2px dashed var(--accent); padding-top: 1.5rem; margin-top: 1.5rem; }
+        .strategy-box { background: #eff6ff; border: 1px solid #dbeafe; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
 
         footer { background: var(--primary); color: white; padding: 4rem 0; text-align: center; }
+        footer a { color: var(--accent); text-decoration: none; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div style="font-weight: 700;">YM</div>
+        <div style="font-weight: 700; color: var(--primary);">YAHYA MAZOUARI</div>
         <div class="nav-links">
-            <a href="#about">À propos</a>
+            <a href="#about">Profil</a>
             <a href="#exp">Expériences</a>
-            <a href="#projets">Projets</a>
+            <a href="#ppp">Projet (PPP)</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -50,89 +52,82 @@
     <div class="container">
         <section class="hero" id="about">
             <div>
-                <h1>Yahya Mazouari</h1>
-                <p style="font-size: 1.25rem; color: #64748b; margin: 1rem 0;">Élève Ingénieur en Informatique et Télécommunications</p>
-                <p>Étudiant à l'<strong>ENSEEIHT</strong>, spécialisé en réseaux et sciences du numérique. Fort d'un parcours d'excellence en CPGE au Maroc.</p>
-                <a href="cv.pdf" class="btn" target="_blank"><i class="fas fa-download"></i> Consulter le CV (PDF)</a>
+                <h1>Projet Personnel Professionnel</h1>
+                <p style="font-size: 1.2rem; color: #64748b; margin: 1rem 0;">Spécialisation en Systèmes de Télécommunications</p>
+                <p>Élève ingénieur à l'<strong>ENSEEIHT</strong>[cite: 70]. Mon objectif est de basculer du statut d'étudiant à celui de chercheur en R&D.</p>
+                <div style="display: flex; gap: 10px;">
+                    <a href="cv.pdf" class="btn" target="_blank"><i class="fas fa-file-pdf"></i> Mon CV</a>
+                    <a href="ppp.pdf" class="btn" style="background: var(--accent);" target="_blank"><i class="fas fa-presentation-screen"></i> Présentation PPP</a>
+                </div>
             </div>
             <div class="hero-img">
                 <img src="https://static.wixstatic.com/media/a1f3da_dc18a03cace54c41875a1a124d240305~mv2.jpg" alt="Yahya Mazouari">
             </div>
         </section>
 
-        <section id="exp">
-            <h2>Expériences Professionnelles</h2>
+        <section id="ppp">
+            <h2>Mon Projet d'Avenir</h2>
             <div class="grid">
                 <div class="card">
-                    <span class="date">Juin - Juil. 2025 | Paris</span>
-                    <h3>Stagiaire Administratif</h3>
-                    <p><strong>Auto-école Cozy Conduite</strong></p>
-                    <p>Gestion des inscriptions, plannings moniteurs et digitalisation des dossiers élèves.</p>
+                    <span class="date">Master 1</span>
+                    <h3>Immersion Professionnelle</h3>
+                    <p>En recherche active d'un stage pour consolider mes bases techniques en entreprise.</p>
                 </div>
                 <div class="card">
-                    <span class="date">Été 2025 | France</span>
-                    <h3>Préparateur de Commande</h3>
-                    <p><strong>Retree Discount</strong></p>
-                    <p>Picking, expédition et gestion des stocks. Travail en équipe et respect des cadences.</p>
+                    <span class="date">Master 2</span>
+                    <h3>Vers l'Expertise</h3>
+                    <ul>
+                        <li>Candidature pour le <strong>Master SATCOM</strong>.</li>
+                        <li>Ou spécialisation en Télécoms sans fil et objets connectés.</li>
+                        <li>Stage de fin d'études en laboratoire de recherche à Toulouse.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="date">Sortie d'école</span>
+                    <h3>Doctorat (PhD)</h3>
+                    <p>Ambition de devenir <strong>PhD Student</strong> pour contribuer à l'innovation avancée.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Mes Stratégies de Réussite</h3>
+            <div class="strategy-box">
+                <strong>💡 Transition Chercheur :</strong> Choisir des projets de recherche (JRP) et des stages exclusivement orientés vers l'innovation en laboratoire ou R&D.
+            </div>
+            <div class="strategy-box">
+                <strong>🤝 Réseautage :</strong> Anticiper le contrat doctoral dès le M2 en sollicitant le réseau de l'N7 et les partenaires industriels (CNES, Airbus, Thales).
+            </div>
+        </section>
+
+        <section id="exp">
+            <h2>Expériences & Parcours</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="date">2025 | Paris</span>
+                    <h3>Auto-école Cozy Conduite</h3>
+                    <p>Stage administratif (6 semaines) : Gestion des plannings et digitalisation des dossiers.</p>
+                </div>
+                <div class="card">
+                    <span class="date">Été 2025</span>
+                    <h3>Retree Discount</h3>
+                    <p>Préparateur de commande : Gestion logistique et travail en équipe.</p>
                 </div>
                 <div class="card">
                     <span class="date">2025 | Toulouse</span>
-                    <h3>Enseignant Particulier</h3>
-                    <p><strong>Espace Co</strong></p>
-                    <p>Soutien scolaire en mathématiques/physique et suivi pédagogique individualisé.</p>
+                    <h3>Espace Co</h3>
+                    <p>Enseignant particulier : Soutien en mathématiques et physique.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="projets">
-            <h2>Projets Techniques</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>To-Do List App</h3>
-                    <p>Développement Java en équipe. Conception Orientée Objet et gestion de projet agile.</p>
-                </div>
-                <div class="card">
-                    <h3>Simulation FAI Simplifié</h3>
-                    <p>Architecture réseau incluant le Routage, DNS et DHCP (Linux).</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Formation</h2>
-            <div class="card">
-                <span class="date">2024 - 2027</span>
-                <h3>ENSEEIHT, Toulouse</h3>
-                <p>Diplôme d'Ingénieur en Informatique et Télécommunications.</p>
-            </div>
-            <br>
-            <div class="card">
-                <span class="date">2022 - 2024</span>
-                <h3>Lycée Ibn Timiya, Maroc</h3>
-                <p>CPGE - Filière MPSI/MP.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Compétences Techniques</h2>
-            <ul class="skills-list">
-                <li class="skill-item">Java</li>
-                <li class="skill-item">Python</li>
-                <li class="skill-item">C / Ada</li>
-                <li class="skill-item">MATLAB</li>
-                <li class="skill-item">Git / VS Code</li>
-                <li class="skill-item">Linux / Unix</li>
-                <li class="skill-item">Français (Bilingue)</li>
-                <li class="skill-item">Anglais (Technique)</li>
-            </ul>
         </section>
     </div>
 
     <footer id="contact">
-        <h2>Contact</h2>
-        <p>📍 21 Rue de Cher, 31100 Toulouse</p>
-        <p>📞 +33 7 58 49 77 27</p>
-        <p>📧 mazouariyahya@gmail.com</p>
+        <div class="container">
+            <h2>Me Contacter</h2>
+            <p>📧 <a href="mailto:mazouariyahya@gmail.com">mazouariyahya@gmail.com</a> </p>
+            <p>📍 34 avenue de l'Hers, Toulouse </p>
+            <p>📞 +33 7 58 49 77 27 </p>
+            <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Yahya Mazouari. Présentation réalisée pour le PPP.</p>
+        </div>
     </footer>
 
 </body>
