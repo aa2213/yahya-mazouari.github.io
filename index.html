@@ -44,7 +44,7 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh; display: flex; align-items: center; justify-content: center;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
             padding: 0 10%; gap: 60px;
             background: radial-gradient(circle at top right, #e0e7ff, transparent), var(--bg-light);
         }
@@ -110,17 +110,21 @@
             font-size: 1.1rem;
         }
         .video-wrapper {
-            background: var(--primary);
+            background: #000;
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
             margin-bottom: 2rem;
+            aspect-ratio: 16 / 9;
+            position: relative;
         }
-        .video-wrapper video {
+        .video-wrapper iframe {
             width: 100%;
+            height: 100%;
             display: block;
-            border-radius: 24px;
+            border: none;
         }
+
         .retake-info {
             background: var(--white);
             padding: 2rem;
@@ -149,6 +153,25 @@
         }
         .retake-info ul li:last-child { border-bottom: none; }
         .retake-info ul li i { color: var(--accent); width: 20px; }
+
+        /* Note partage */
+        .sharing-note {
+            background: #fef9c3;
+            border-left: 5px solid #eab308;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            color: #854d0e;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+        .sharing-note i {
+            font-size: 1.4rem;
+            color: #eab308;
+            margin-top: 2px;
+        }
 
         footer { background: var(--primary); color: white; padding: 4rem 0; text-align: center; }
         
@@ -256,21 +279,25 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- SECTION RETAKES CAM – NOUVEAU                                 -->
+    <!-- SECTION RETAKES CAM – VIDÉO GOOGLE DRIVE EMBED               -->
     <!-- ============================================================ -->
     <section id="retake">
         <div class="container">
             <h2 class="reveal">📹 RETAKES M1 CAM <br>épreuve 1 &amp; 2</h2>
             <p class="subtitle reveal">
-                Personnel video presentation – <strong>Conflict Management</strong> module
+                Personal video presentation – <strong>Conflict Management</strong> module
             </p>
 
-            <!-- Lecteur vidéo -->
+            <!-- Lecteur vidéo intégré depuis Google Drive -->
             <div class="video-wrapper reveal">
-                <video controls width="100%" poster="">
-                    <source src="URL_DE_VOTRE_VIDEO.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture vidéo.
-                </video>
+                <iframe 
+                    src="https://drive.google.com/file/d/12EHWZ-uaJhIURw20LDo-wNJRxtqIgWLf/preview" 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
             </div>
 
             <!-- Informations complémentaires -->
@@ -292,6 +319,20 @@
                     <i class="fas fa-calendar-alt"></i> Soumission : Juin 2026 &nbsp;|&nbsp; 
                     <i class="fas fa-user-graduate"></i> ENSEEIHT – CAM Option Leadership
                 </p>
+            </div>
+
+            <!-- ⚠️ RAPPEL IMPORTANT : Paramètres de partage -->
+            <div class="sharing-note reveal">
+                <i class="fas fa-share-alt"></i>
+                <div>
+                    <strong>🔒 Vérification obligatoire avant envoi :</strong><br>
+                    Assurez-vous que votre vidéo Google Drive est en 
+                    <strong>« Accès public – Toute personne disposant du lien »</strong>.<br>
+                    <span style="font-size: 0.9rem;">
+                        Pour vérifier : ouvrez le lien dans un navigateur privé (Incognito). 
+                        Si la vidéo se lance, c'est bon !
+                    </span>
+                </div>
             </div>
         </div>
     </section>
